@@ -45,9 +45,12 @@ class SimpleTodos extends Component {
   }
 
   deleteTodo = id => {
-    this.setState(prevState => ({
-      todosList: prevState.todosList.filter(eachTodo => eachTodo.id !== id),
-    }))
+    const {todosList} = this.state
+    const updatedTodosList = todosList.filter(eachTodo => eachTodo.id !== id)
+
+    this.setState({
+      todosList: updatedTodosList,
+    })
   }
 
   render() {
